@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.em.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.example.em.pojo.UserVO">
+        <result column="u_id" jdbcType="BIGINT" property="uId" />
+        <result column="u_name" jdbcType="VARCHAR" property="uName" />
+        <result column="u_acct" jdbcType="VARCHAR" property="uAcct" />
+        <result column="u_password" jdbcType="VARCHAR" property="uPassWord" />
+        <result column="u_valid_flag" jdbcType="VARCHAR" property="uValidFlag" />
+    </resultMap>
+
+    <sql id="Base_Column_list">
+        u_id, u_name, u_acct, u_password,u_valid_flag
+    </sql>
+
+    <!--根据用户账号密码查询用户信息-->
+    <select id="getUserByAcctInfo" resultMap="BaseResultMap">
+        SELECT
+	      <include refid="Base_Column_list" />
+        FROM user u
+        WHERE
+	        u.u_acct = #{username}
+        AND u.u_password = #{password}
+        LIMIT 1
+    </select>
+
+
+
+</mapper>
