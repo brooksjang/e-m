@@ -17,6 +17,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object user = request.getSession().getAttribute("loginUser");
         if (user == null) {
+            logger.info(request.getRequestURL().toString());
             logger.info("该用户无权限登录");
             request.setAttribute("msg", "请先登录！");
             request.getRequestDispatcher("/index").forward(request, response);

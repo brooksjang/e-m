@@ -3,6 +3,8 @@ package com.example.em.controller;
 import com.alibaba.fastjson.JSON;
 import com.example.em.pojo.EmployeeVO;
 import com.example.em.service.IEmployeeSV;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,8 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("/employee")
+    @RequestMapping("/employee")
+@Api(value = "员工管理")
 public class EmployeeController {
     Logger logger = (Logger) LoggerFactory.getLogger(EmployeeController.class);
 
@@ -30,6 +33,7 @@ public class EmployeeController {
      *
      * @return
      */
+    @ApiOperation(value = "获取所有员工基本信息")
     @RequestMapping("/findAll")
     @ResponseBody
     public List<EmployeeVO> findAll() {
@@ -74,6 +78,7 @@ public class EmployeeController {
      *
      * @return
      */
+    @ApiOperation(value = "展示所有的部门")
     @RequestMapping("/showDepartment")
     @ResponseBody
     public List<EmployeeVO> showDepartment() {

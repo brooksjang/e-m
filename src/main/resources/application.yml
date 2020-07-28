@@ -40,6 +40,9 @@ mybatis:
   mapper-locations: classpath:mappings/*Mapper.xml
   type-aliases-package: com.example.em.pojo
 
+# swagger
+springfox.documentation.swagger.v2.path: /api-docs
+
 ---
 druid:
   loginUsername: admin
