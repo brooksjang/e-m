@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * 用于登录操作的拦截器
  */
 public class LoginInterceptor implements HandlerInterceptor {
-    Logger logger = (Logger) LoggerFactory.getLogger(LoginInterceptor.class);
+    Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

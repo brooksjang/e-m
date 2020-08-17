@@ -21,9 +21,11 @@ import java.util.Map;
 @Configuration
 public class DruidConfig {
 
+    //监控界面登录账号
     @Value("${druid.loginUsername}")
     public String loginUsername;
 
+    //监控页面登录密码
     @Value("${druid.loginPassword}")
     public String loginPassword;
 

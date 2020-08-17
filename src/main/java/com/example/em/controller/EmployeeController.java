@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-    @RequestMapping("/employee")
+@RequestMapping("/employee")
 @Api(value = "员工管理")
 public class EmployeeController {
     Logger logger = (Logger) LoggerFactory.getLogger(EmployeeController.class);
